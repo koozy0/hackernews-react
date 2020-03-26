@@ -1,0 +1,33 @@
+@import './colors.scss';
+
+.header {
+  top: 0;
+  position: sticky;
+  margin-bottom: 3rem;
+  z-index: 100;
+
+  &__logo {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    min-height: 64px;
+    flex-wrap: wrap;
+  }
+
+  &__spacer {
+    flex: 1;
+  }
+
+  &__group {
+    padding: 0.5rem;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+  }
+}

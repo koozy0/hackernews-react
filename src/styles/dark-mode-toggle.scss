@@ -1,0 +1,62 @@
+@import './colors.scss';
+
+$dark-switch: rgb(39, 39, 51);
+$light-switch: rgb(180, 212, 255);
+$dark-slider: rgb(224, 224, 224);
+$light-slider: rgb(255, 234, 112);
+
+.switch {
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 38px;
+
+  &__input {
+    display: none;
+  }
+
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 350ms;
+    border: 4px solid;
+    background: $light-switch;
+    border-color: $light-switch;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+
+    &--round {
+      border-radius: 20px;
+
+      &:before {
+        width: 36%;
+        height: 47%;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        transform: translateX(-2px) rotateZ(-45deg);
+      }
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 4px;
+      transition: 350ms;
+      background: $light-slider;
+    }
+  }
+
+  &__input:checked + &__slider {
+    background: $dark-switch;
+    border-color: $dark-switch;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  }
+
+  &__input:checked + &__slider:before {
+    transform: translateX(48px) rotateZ(45deg);
+    background: $dark-slider;
+  }
+}
