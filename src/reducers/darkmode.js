@@ -1,6 +1,7 @@
 import { DARK_MODE } from '../actions/type';
+import { getInitialDarkMode } from '../shared/utils/darkmode';
 
-const initialState = true;
+const initialState = getInitialDarkMode();
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

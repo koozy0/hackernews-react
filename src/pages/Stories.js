@@ -1,10 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const Stories = () => {
+const Stories = ({ story }) => {
   return (
     <>
       <section>
-        <h1>View Stories</h1>
+        <h1>{story.filter.toUpperCase()} Stories</h1>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste
           officiis temporibus dicta? Ex earum quibusdam architecto! Amet
@@ -16,4 +17,8 @@ const Stories = () => {
   );
 };
 
-export default Stories;
+const mapStateToProps = ({ story }) => ({ story });
+
+const mapDispatchToProps = (dispatch) => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Stories);

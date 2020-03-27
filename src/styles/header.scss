@@ -5,6 +5,7 @@
   position: sticky;
   margin-bottom: 3rem;
   z-index: 100;
+  transition: background 350ms;
 
   &__logo {
     font-size: 1.5rem;
@@ -29,5 +30,15 @@
     min-height: 3rem;
     display: flex;
     align-items: center;
+  }
+
+  &--scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    color: $light;
+
+    a {
+      color: $light;
+    }
   }
 }

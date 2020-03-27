@@ -1,14 +1,32 @@
 import '../styles/header.scss';
 
+import React, { useEffect, useState } from 'react';
+
 import DarkModeToggle from './DarkModeToggle';
 import { NavLink } from 'react-router-dom';
-import React from 'react';
 
 const title = 'Hacker News';
 
 const Header = () => {
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollCheck = window.scrollY > 30;
+      if (scrollCheck !== scroll) {
+        setScroll(scrollCheck);
+      }
+    };
+
+    document.addEventListener('scroll', onScroll);
+
+    return () => {
+      document.removeEventListener('scroll', onScroll);
+    };
+  }, [scroll, setScroll]);
+
   return (
-    <header className="header">
+    <header className={scroll ? 'header header--scrolled' : 'header'}>
       <nav className="header__nav">
         <div className="header__group">
           <h1 className="header__logo">{title}</h1>
