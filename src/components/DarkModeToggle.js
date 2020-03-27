@@ -1,4 +1,4 @@
-import '../styles/dark-mode-toggle.scss';
+import '../styles/darkModeToggle.scss';
 
 import React from 'react';
 import { connect } from 'react-redux';

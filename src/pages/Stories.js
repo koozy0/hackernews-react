@@ -1,24 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchAllStories } from '../actions/story';
+import StoryFilters from '../components/StoryFilters';
+import StoryList from '../components/StoryList';
 
-const Stories = ({ story }) => {
-  return (
-    <>
-      <section>
-        <h1>{story.filter.toUpperCase()} Stories</h1>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste
-          officiis temporibus dicta? Ex earum quibusdam architecto! Amet
-          delectus aliquid tempore sint modi voluptatem odio aspernatur, eius,
-          enim veritatis ut sed.
-        </p>
-      </section>
-    </>
-  );
-};
+class Stories extends Component {
+  componentDidMount() {
+    this.props.fetchAllStories();
+  }
 
-const mapStateToProps = ({ story }) => ({ story });
+  render() {
+    const { loading, page, story } = this.props;
 
-const mapDispatchToProps = (dispatch) => ({});
+    return (
+      <>
+        <section>
+          <StoryFilters />
+          {loading.story && <p>Loading...</p>}
+          <StoryList
+            storyIds={story.allIds.slice(
+              page.size * page.number,
+              page.size * (page.number + 1),
+            )}
+          />
+        </section>
+      </>
+    );
+  }
+}
+
+const mapStateToProps = ({ loading, page, story }) => ({
+  loading,
+  page,
+  story,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchAllStories: () => dispatch(fetchAllStories()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Stories);

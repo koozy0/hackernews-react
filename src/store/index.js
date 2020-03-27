@@ -3,6 +3,7 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from '../reducers';
 import rootDarkModeSaga from '../sagas/darkmode';
+import rootStorySaga from '../sagas/story';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
@@ -15,5 +16,6 @@ const store = createStore(
 );
 
 sagaMiddleware.run(rootDarkModeSaga);
+sagaMiddleware.run(rootStorySaga);
 
 export default store;

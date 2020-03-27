@@ -6,20 +6,20 @@
   transition: background 350ms;
 
   &__dark {
-    background: $dark;
-    color: $light;
+    background: $black;
+    color: $white;
 
     a {
-      color: $light;
+      color: $white;
     }
   }
 
   &__light {
-    background: $light;
-    color: $dark;
+    background: $white;
+    color: $black;
 
     a {
-      color: $dark;
+      color: $black;
     }
   }
 }

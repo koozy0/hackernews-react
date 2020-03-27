@@ -1,3 +1,4 @@
+import About from './pages/About';
 import Faq from './pages/Faq';
 import Guidelines from './pages/Guidelines';
 import NotFound from './pages/NotFound';
@@ -12,6 +13,10 @@ const routes = [
   {
     path: '/stories',
     component: Stories,
+  },
+  {
+    path: '/about',
+    component: About,
   },
   {
     path: '/faq',

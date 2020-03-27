@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 h1 {
   font-size: 2rem;
   font-weight: 500;
@@ -32,15 +34,16 @@ p {
 
 a {
   opacity: 0.7;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  transition: color 350ms;
+}
 
-  &:first-child {
-    margin-left: 0;
+a.link {
+  &--active {
+    color: $red;
   }
 
-  &:last-child {
-    margin-right: 0;
+  &:hover {
+    color: $blue;
   }
 }
 

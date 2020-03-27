@@ -29,14 +29,36 @@ const Header = () => {
     <header className={scroll ? 'header header--scrolled' : 'header'}>
       <nav className="header__nav">
         <div className="header__group">
-          <h1 className="header__logo">{title}</h1>
+          <NavLink to="/" className="header__logo">
+            <h1>{title}</h1>
+          </NavLink>
         </div>
         <div className="header__spacer"></div>
         <div className="header__group">
-          <NavLink to="/">home</NavLink>
-          <NavLink to="/stories">stories</NavLink>
-          <NavLink to="/submit">submit</NavLink>
-          <NavLink to="/about">about</NavLink>
+          <NavLink to="/" className="header__link link">
+            home
+          </NavLink>
+          <NavLink
+            to="/stories"
+            className="header__link link"
+            activeClassName="link--active"
+          >
+            stories
+          </NavLink>
+          <NavLink
+            to="/submit"
+            className="header__link link"
+            activeClassName="link--active"
+          >
+            submit
+          </NavLink>
+          <NavLink
+            to="/about"
+            className="header__link link"
+            activeClassName="link--active"
+          >
+            about
+          </NavLink>
         </div>
         <div className="header__group">
           <DarkModeToggle />

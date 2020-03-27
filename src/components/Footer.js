@@ -7,9 +7,26 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__links">
-        <NavLink to="/guidelines">guidelines</NavLink>
-        <NavLink to="/faq">faq</NavLink>
-        <a href="https://github.com/HackerNews/API">api</a>
+        <NavLink
+          to="/guidelines"
+          className="footer__link link"
+          activeClassName="link--active"
+        >
+          guidelines
+        </NavLink>
+        <NavLink
+          to="/faq"
+          className="footer__link link"
+          activeClassName="link--active"
+        >
+          faq
+        </NavLink>
+        <a
+          href="https://github.com/HackerNews/API"
+          className="footer__link link"
+        >
+          api
+        </a>
       </div>
     </footer>
   );

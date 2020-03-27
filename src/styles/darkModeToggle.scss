@@ -1,9 +1,9 @@
 @import './colors.scss';
 
-$dark-switch: rgb(39, 39, 51);
-$light-switch: rgb(180, 212, 255);
-$dark-slider: rgb(224, 224, 224);
-$light-slider: rgb(255, 232, 98);
+$dark-switch: #272733;
+$light-switch: #82baff;
+$dark-slider: #f0f0f0;
+$light-slider: #fefd8b;
 
 .switch {
   position: relative;

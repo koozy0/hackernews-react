@@ -5,8 +5,8 @@ const client = new ApiService(BASE_URL);
 
 const hackerNewsApiService = {};
 
-hackerNewsApiService.getStories = (filter) =>
-  client.get(`/${filter.toLowerCase()}stories.json?print=pretty`);
+hackerNewsApiService.getAllStories = (filter) =>
+  client.get(`/${filter}stories.json?print=pretty`);
 
 hackerNewsApiService.getItem = (id) =>
   client.get(`/item/${id}.json?print=pretty}`);

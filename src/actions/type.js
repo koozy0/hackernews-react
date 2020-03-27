@@ -4,17 +4,13 @@ export const DARK_MODE = {
 };
 
 export const STORY = {
-  FILTER: {
-    TOP: 'TOP',
-    NEW: 'NEW',
-    BEST: 'BEST',
-    ASK: 'ASK',
-    SHOW: 'SHOW',
-    JOBS: 'JOBS',
-  },
+  SET_FILTER: 'STORY_SET_FILTER',
+  FETCH_ALL: 'STORY_FETCH_ALL',
+  FETCH_ALL_SUCCESS: 'STORY_FETCH_ALL_SUCCESS',
+  FETCH_ALL_FAILURE: 'STORY_FETCH_ALL_FAILURE',
 };
 
 export const PAGE = {
-  NEXT: 'NEXT_PAGE',
-  PREV: 'PREV_PAGE',
+  NEXT: 'PAGE_NEXT',
+  PREV: 'PAGE_PREV',
 };
